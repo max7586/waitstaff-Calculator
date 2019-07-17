@@ -17,6 +17,15 @@ const store = (function(){
 		this.averageTipMeal = this.tipTotal / this.mealCount;
 	};
 
+	const resetValues = function(){
+	 this.subtotal = 0.00;
+	 this.tip = 0.00;
+	 this.total = 0.00;
+	 this.tipTotal = 0.00;
+	 this.mealCount = 0;
+	 this.averageTipMeal = 0.00;
+	}
+
 	return{
 		subtotal,
 		tip,
@@ -24,8 +33,7 @@ const store = (function(){
 		tipTotal,
 		mealCount,
 		averageTipMeal,
-		setCharges
+		setCharges,
+		resetValues
 	}
 }());
-
-console.log("Hello");
