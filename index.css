@@ -3,7 +3,7 @@ main {
     display: flex;
 }
 
-section {
+section, .results {
     color : red;
     border: 1px solid black ;
     display : flex;
