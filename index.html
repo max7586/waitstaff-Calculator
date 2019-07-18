@@ -10,32 +10,40 @@
 <body>
     <header><h1>Waitstaff Calculator</h1></header>
     <main>
-        <section>
-            <h2>Enter the Meal Deatails</h2>
-            <form id="js-meal-detail">
-                Base Meal Price: $ <input type="text" id="base-meal" name="fname" ><br>
-                Tax rate: % <input type="text" id="tax-rate" name="lname"><br>
-                tip Percentage: % <input type="text" id="tip-percentage" name="lname"><br>
-                <button type="submit" class="js-submit">Submit</button>
-                <button>Cancel</button>
-            </form>
+        <section class="container">
+            <section class = "leftContainer" >
+                <h3>Enter the Meal Deatails</h3>
+                <form id="js-meal-detail">
+                    Base Meal Price: $ <input type="number" id="base-meal" name="price" required><br>
+                    Tax rate: % <input type="number" id="tax-rate" name="tax" required><br>
+                    Tip Percentage: % <input type="number" id="tip-percentage" name="tip" required><br>
+                    <div class = 'left-con-bnt'>
+                        <button type="submit" class="js-submit">Submit</button>
+                        <button class='js-cancel-btn' >Cancel</button>
+                    </div>
+                    
+                </form>
+            </section>
+            <section class='rightContainer'>
+                <div class="right-top-con">
+                    <h3>Customer Charges</h3>
+                    <label>Subtotal <span class='subtotal'>0.00</span></label><br>
+                    <label>Tip <span class='tip'>0.00</span></label><br>
+                    <label class='total'>Total <span class='total'>0.00</span></label><br>
+                </div>
+                <div class="right-bottom-con">
+                    <h3>My Earnings Info </h3>
+                    <label>Tip Total <span class='tipTotal'>0.00</span></label><br>
+                    <label>Meal count <span class='mealCount'>0</span></label><br>
+                    <label>Average Tip Per Meal <span class='averageTipMeal'>0.00</span></label><br>
+                     
+                </div>
+            </section>
+             
         </section>
-        <section>
-            <div class="results" >
-                <h2>Customer Charges</h2>
-                <label >Subtotal <span class ='subtotal'>0.00</span></label><br>
-                <label>Tip <span class = 'tip'>0.00</span></label><br>
-                <label>Total <span class = 'total'>0.00</span></label><br>
-            </div>
-            <div class="results">
-                <h2>My Earnings Info </h2>
-                <label>Tip Total <span class='tipTotal'>0.00</span></label><br>
-                <label>Meal count <span class='mealCount'>0</span></label><br>
-                <label>Average Tip Per Meal <span class='averageTipMeal'>0.00</span></label>
-            </div>
-        </section>
+      <button id="resetButton" >Reset</button>
     </main>
-    <button id="resetButton" >Reset</button>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="scripts/util.js"></script>
     <script src="scripts/store.js"></script>

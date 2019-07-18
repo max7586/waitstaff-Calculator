@@ -10,7 +10,7 @@ function handleSubmitNew(){
 		const result = utils.calculateCharges(baseMeal, taxRate, tipPercentage);
 		resetForm();
 		store.setCharges(result['subtotal'], result['tip']);
-		dispplayInfo();
+		render();
 	});
 }
 
@@ -18,16 +18,26 @@ function resetForm(){
 	$('#base-meal').val("");
 	$('#tax-rate').val("");
 	$('#tip-percentage').val("");
+	$('.subtotal').val('')
+	$('.tip').val('')
+	$('.total').val('')
 }
 
 function handleReset(){
 	$('#resetButton').on('click', event => {
 		store.resetValues();
-		dispplayInfo();
+		render();
 	});
 }
 
-function dispplayInfo () {
+function handlecancel() {
+	$('.js-cancel-btn').on ('click', event =>{
+		event.preventDefault();
+		resetForm();
+	} )
+}
+
+function render () {
 	$('.subtotal').html(store.subtotal);
 	$('.tip').html(store.tip);
 	$('.total').html(store.total);
@@ -36,9 +46,10 @@ function dispplayInfo () {
 	$('.averageTipMeal').html(store.averageTipMeal);
 }
 
-function bindEventListeners(){
+function main(){
 	handleSubmitNew();
 	handleReset();
+	handlecancel();
 }
 
-$(bindEventListeners());
+$(main());
