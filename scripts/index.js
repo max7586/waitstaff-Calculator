@@ -25,6 +25,7 @@ function resetForm(){
 
 function handleReset(){
 	$('#resetButton').on('click', event => {
+		resetForm();
 		store.resetValues();
 		render();
 	});
